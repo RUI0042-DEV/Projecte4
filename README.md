@@ -77,12 +77,30 @@ Aquest conjunt de lliurables constitueix la **carpeta professional** que demostr
 - Treball en equip amb autonomia progressiva.
 - Planificació i seguiment amb Kanban.
 - Documentació rigorosa i enfocament sostenible.
-
+---
+## 📅 Planner
+https://planner.cloud.microsoft/webui/v1/plan/aPyzw1PlMU6krnqhGAzYhZYAC5se?tid=c7b5981a-7820-4ac8-ae65-03515ea81317
 ---
 ## 📂 Contingut
 ---
 ### 📄 Tascas
+- [Tasca 0](T00)
 - [Tasca 1](T01)
-- 
+- [Tasca 2](T02)
+- [Tasca 3](T03)
+- [Tasca 4](T04)
+- [Tasca 5](T05)
+- [Tasca 6](T06)
+- [Tasca 7](T07)
+- [Tasca 8](T08)
+- [Tasca 9](T09)
+- [Tasca 10](T10)
+- [Tasca 11](T11)
+- [Tasca 12](T12)
+- [Tasca 13](T13)
+- [Tasca 14](T14)
+- [Tasca 15](T15)
 ### 🛠️ Productes
 - [Producte 1](P01)
+- [Producte 2](P02)
+- [Producte 3](P03)
