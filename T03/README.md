@@ -30,7 +30,7 @@ Elaborar una taula comparativa incloent **dos productes comercials** i **dos pro
 
 ### 2. Proposta i Justificació
 * **Proposta:** Indicar clarament quina solució recomaneu al client.
-* **Justificació:** Argumentar la proposta basant-se en els criteris de la comparativa (cost, facilitat d'ús, compatibilitat amb Linux/Zorin OS, i el requisit de RTO ràpid).
+* **Justificació:** Argumentar la proposta basant-se en els criteris de la comparativa (**cost**, **facilitat d'ús**, **compatibilitat amb Linux/Zorin OS**, i el requisit de **RTO ràpid**).
 
 ---
 
@@ -51,20 +51,20 @@ La guia ha de ser acurada, pas a pas, i incloure la documentació dels dos proce
 * Selecció de la partició/disc d'origen.
 * Selecció del destí de la còpia (disc extern o xarxa).
 * Configuració i inici de la creació de la imatge.
+* *Requisit:* Incloure captures de pantalla significatives del procés.
 
 #### 2. Restaurar la Imatge sobre un Sistema Net
 * Detallar el procés de restauració pas a pas.
 * Selecció de la imatge (fitxer) a restaurar.
-* Selecció acurada del disc destí.
+* Selecció acurada del disc destí (crític per no sobreescriure dades).
 * Inici de la restauració i comprovació final (que l'equip arranqui amb totes les configuracions originals de Zorin OS 18).
-
-* **Requisit:** Incorporar captures de pantalla significatives per facilitar la comprensió del procediment.
+* *Requisit:* Incloure captures de pantalla significatives del procés.
 
 ---
 
 ## 🔗 Materials i Enllaços de Suport
 
-* INCIBE. ¿Ya tienes tu Plan de Recuperación ante Desastres?. [Blog]. Agost 2019.
-* Pàgina oficial de Rescuezilla.
----
-[Tornar a la pagina principal](../README.md)
+* **INCIBE. ¿Ya tienes tu Plan de Recuperación ante Desastres?:**
+    * [https://www.incibe.es/empresas/blog/tienes-tu-plan-recuperacion-desastres](https://www.incibe.es/empresas/blog/tienes-tu-plan-recuperacion-desastres)
+* **Pàgina oficial de Rescuezilla:**
+    * [https://rescuezilla.com/](https://rescuezilla.com/)
