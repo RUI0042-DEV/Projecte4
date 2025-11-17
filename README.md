@@ -79,6 +79,7 @@ Aquest conjunt de lliurables constitueix la **carpeta professional** que demostr
 - Documentació rigorosa i enfocament sostenible.
 ---
 ## 📅 Planner
+
 [Link planner](https://planner.cloud.microsoft/webui/v1/plan/aPyzw1PlMU6krnqhGAzYhZYAC5se?tid=c7b5981a-7820-4ac8-ae65-03515ea81317)
 ---
 ## 📂 Contingut
