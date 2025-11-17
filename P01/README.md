@@ -54,3 +54,5 @@ El lliurament es basarà en el seguiment del flux de treball i les proves de Pul
 
 * **Guia Detallada de l'Activitat:** [https://github.com/SMX2n/Projecte04-GuiaGitHub](https://github.com/SMX2n/Projecte04-GuiaGitHub)
 * **Vídeo/Material:** Revisar el material proporcionat sobre el flux de treball de Git, Forks i Pull Requests.
+---
+[Tornar a la pagina principal](../README.md)
