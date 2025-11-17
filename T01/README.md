@@ -55,6 +55,7 @@ Aquest projecte presenta un estudi de cas sobre la implementació d'una estratè
 ## 🌐 Recursos
 - [https://www.incibe.es](https://www.incibe.es/sites/default/files/contenidos/guias/guia-copias-de-seguridad.pdf)
 - [Vídeo explicatiu: Backup 3-2-1](https://youtu.be/PM_M4Iz6I4o?si=F7DRyDDTZE3hjWn8)
+
 Garantir la **continuïtat del negoci** i la **seguretat de les dades** davant incidents, complint amb els requisits establerts.
 
 ---
