@@ -79,3 +79,10 @@ Aquest conjunt de lliurables constitueix la **carpeta professional** que demostr
 - Documentació rigorosa i enfocament sostenible.
 
 ---
+## 📂 Contingut
+---
+### 📄 Tascas
+- [Tasca 1](T01)
+- 
+### 🛠️ Productes
+- [Producte 1](P01)
