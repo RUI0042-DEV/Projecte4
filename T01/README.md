@@ -96,6 +96,6 @@ Calendari detallat de les còpies per a les dades crítiques i no crítiques.
 * INCIBE. Copias de seguridad. Una guía de aproximación para el empresario. [INCIBE](https://www.incibe.es/sites/default/files/contenidos/guias/guia-copias-de-seguridad.pdf)
 * Xataka. **Backup 3-2-1, el método definitivo para mantener a salvo tus datos. [YouTube](https://youtu.be/PM_M4Iz6I4o?si=F7DRyDDTZE3hjWn8)
 ---
-[Solucio](Solucio.md)
+- [Solucio](Solucio.md)
 ---
 [Tornar a la pagina principal](../README.md)
