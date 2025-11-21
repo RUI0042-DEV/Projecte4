@@ -92,7 +92,7 @@ Calendari detallat de les còpies per a les dades crítiques i no crítiques.
 
 ## 🔗 Materials i Enllaços de Suport
 
-* Moodle 0226 Seguretat Informàtica. RA2.AA3Còpies
+* Moodle 0226 Seguretat Informàtica. RA2.AA3Còpies [Seguretat Informàtica](https://docs.google.com/presentation/d/1X03XRtMELa9ZLDCONlk0wMDvCM2XKmH-/edit?slide=id.p1#slide=id.p1)
 * INCIBE. Copias de seguridad. Una guía de aproximación para el empresario. [INCIBE](https://www.incibe.es/sites/default/files/contenidos/guias/guia-copias-de-seguridad.pdf)
 * Xataka. **Backup 3-2-1, el método definitivo para mantener a salvo tus datos. [YouTube](https://youtu.be/PM_M4Iz6I4o?si=F7DRyDDTZE3hjWn8)
 ---
