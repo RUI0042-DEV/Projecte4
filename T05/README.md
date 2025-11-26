@@ -50,4 +50,5 @@ El document final ha de ser una guia tècnica amb captures de pantalla significa
 * Moodle 0227 Serveis de Xarxa. UD4.AA2 Pràctica SSH
 * Vídeo. SSH amb clau pública/privada (link)
 ---
+[GUIA](guia.md)
 [Tornar a la pagina principal](../README.md)
