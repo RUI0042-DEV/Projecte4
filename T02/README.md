@@ -71,4 +71,5 @@ La unitat de backup ha d'estar desmuntada per defecte. Els scripts han d'inclour
 * **Programació de Tasques amb Cron:** [Enllaç a la guia de cron](https://geekytheory.com/programar-tareas-en-linux-usando-crontab)
 * **Creació d'Arxius de Prova:** [Guia de creació d'arxius (fsutil / dd)](https://waytoit.wordpress.com/2015/03/21/creando-archivos-de-prueba-en-linux/)
 ---
-[Tornar a la pagina principal](../README.md)
+- [Documentacio](Documentacio.md)
+- [Tornar a la pagina principal](../README.md)
