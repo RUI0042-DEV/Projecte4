@@ -55,5 +55,71 @@ sudo apt update && sudo apt upgrade -y
 ping 192.168.56.105   # substitueix per la teva IP real si cal
 ```
 ---
+
 ## Fase 2: Preparació del servidor
-Creació de grups i usuaris
+
+### Crear grups i usuaris al servidor:
+
+```bash
+# Grups
+# Grups (📍[Només al servidor – per ara])
+sudo groupadd -g 1002 devs
+sudo groupadd -g 1004 admins
+
+# Usuaris (📍[Només al servidor – per ara])
+sudo useradd -u 1001 -g 1002 -m dev01
+sudo useradd -u 1002 -g 1004 -m admin01
+
+# (Opcional) Establir contrasenyes
+sudo passwd dev01
+sudo passwd admin01
+```
+<img width="429" height="93" alt="image" src="https://github.com/user-attachments/assets/c9034527-8482-45f2-930e-db390c6d5ee8" />
+<img width="545" height="96" alt="image" src="https://github.com/user-attachments/assets/d173fe8d-a226-498f-b77e-9b9155cb3cce" />
+
+
+### Verificar UID i GID al servidor
+
+```bash
+id dev01                # Ex: uid=1001 gid=1002
+id admin01              # Ex: uid=1002 gid=1004
+getent group devs       # Ex: devs:x:1002:
+getent group admins     # Ex: admins:x:1004:
+```
+<img width="563" height="172" alt="image" src="https://github.com/user-attachments/assets/9a635d3e-628e-4bf7-aea5-e9404c10604f" />
+
+
+### Crear els mateixos grups i usuaris al client amb els mateixos ID
+
+> 📍 [Només al client]
+
+```bash
+# Grups amb GID fix
+sudo groupadd -g 1002 devs
+sudo groupadd -g 1004 admins
+
+# Usuaris amb UID i GID fixos
+sudo useradd -u 1001 -g 1002 -m dev01
+sudo useradd -u 1002 -g 1004 -m admin01
+```
+>  ✅ Important: No cal establir contrasenya al client si no vols, però els usuaris han d’existir.
+
+### Directoris compartits
+> 📍 [Només al servidor]
+
+```bash
+sudo mkdir -p /srv/nfs/{dev_projects,admin_tools}
+
+# Propietari: root | Grup: corresponent
+sudo chown root:devs /srv/nfs/dev_projects
+sudo chown root:admins /srv/nfs/admin_tools
+
+# Permisos: només el grup pot llegir/escriure
+sudo chmod 770 /srv/nfs/dev_projects
+sudo chmod 770 /srv/nfs/admin_tools
+```
+### Instal·lació del servidor NFS
+> 📍 [Només al servidor]
+```bash
+sudo apt install nfs-kernel-server -y
+```
