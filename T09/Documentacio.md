@@ -48,3 +48,12 @@ En **totes dues màquines**, actualitza el sistema:
 
 ```bash
 sudo apt update && sudo apt upgrade -y
+```
+
+> ✅ Verifica la connectivitat entre client i servidor (des del client):
+```bash
+ping 192.168.56.105   # substitueix per la teva IP real si cal
+```
+---
+## Fase 2: Preparació del servidor
+Creació de grups i usuaris
