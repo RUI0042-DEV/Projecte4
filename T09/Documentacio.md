@@ -39,6 +39,9 @@ Cada màquina virtual tindrà **dues interfícies de xarxa**:
 > ```
 > Busca la interfície associada a `192.168.56.0/24` (normalment `enp0s8` o similar).
 
+<img width="1114" height="386" alt="image" src="https://github.com/user-attachments/assets/7891778f-a3f4-4984-b760-4ae9b5a4af36" />
+
+
 ### Configuració inicial
 
 En **totes dues màquines**, actualitza el sistema:
