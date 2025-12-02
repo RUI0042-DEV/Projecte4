@@ -67,4 +67,5 @@ El lliurament ha d'incloure els següents punts, documentats de forma clara amb 
 * Ruiz, P. (2021). [NFS (parte 2): Instalación en un cliente Ubuntu 20.04 LTS.](https://somebooks.es/nfs-parte-2-instalacion-en-un-cliente-ubuntu-20-04-lts/)
 * Ubuntu Server. [Network File System (NFS).](https://documentation.ubuntu.com/server/how-to/networking/install-nfs/)
 ---
-[Tornar a la pagina principal](../README.md)
+- [Documentacio](Documentacio.md)
+- [Tornar a la pagina principal](../README.md)
