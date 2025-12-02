@@ -17,3 +17,15 @@ L’objectiu és assegurar la disponibilitat i integritat de la informació crí
   - Compte d’usuari local.
   - Accés a Internet per a la instal·lació de Duplicati i la sincronització amb el núvol.
 
+<img width="862" height="503" alt="image" src="https://github.com/user-attachments/assets/1fa8cd73-b1b0-4998-ad88-0da9009dde1e" />
+
+## 3. Instal·lació de Duplicati
+
+- 1-Accedeix a la pàgina oficial: https://www.duplicati.com/download.
+- 2-Descarrega la versió estable per a Windows.
+- 3-Executa el fitxer i segueix l’assistent d’instal·lació:
+  - Accepta els termes de llicència.
+  - Selecciona "Install for all users".
+  - Marca l’opció "Start Duplicati automatically when Windows starts".
+- Un cop finalitzada la instal·lació, Duplicati s’executarà com a servei i obrirà
+- 
