@@ -103,6 +103,9 @@ sudo useradd -u 1001 -g 1002 -m dev01
 sudo useradd -u 1002 -g 1004 -m admin01
 ```
 >  ✅ Important: No cal establir contrasenya al client si no vols, però els usuaris han d’existir.
+<img width="398" height="74" alt="image" src="https://github.com/user-attachments/assets/559ae3be-dde4-4410-8a1f-ca0a11b7fd02" />
+<img width="478" height="52" alt="image" src="https://github.com/user-attachments/assets/5fb78b96-bb58-4c1f-bd97-31da8d30ce58" />
+
 
 ### Directoris compartits
 > 📍 [Només al servidor]
