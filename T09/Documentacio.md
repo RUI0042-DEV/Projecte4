@@ -107,12 +107,23 @@ sudo useradd -u 1002 -g 1004 -m admin01
 <img width="478" height="52" alt="image" src="https://github.com/user-attachments/assets/5fb78b96-bb58-4c1f-bd97-31da8d30ce58" />
 
 
-### Directoris compartits
+### Crear directoris compartits
 > 📍 [Només al servidor]
 
 ```bash
 sudo mkdir -p /srv/nfs/{dev_projects,admin_tools}
-
+```
+> 🔍 Com comprovar que s’han creat?
+```bash
+ls -l /srv/nfs/
+```
+> Sortida esperada (abans de chown):
+```
+drwxr-xr-x 2 root root ... admin_tools
+drwxr-xr-x 2 root root ... dev_projects
+```
+### Aplicar propietari i permisos
+```bash
 # Propietari: root | Grup: corresponent
 sudo chown root:devs /srv/nfs/dev_projects
 sudo chown root:admins /srv/nfs/admin_tools
@@ -121,8 +132,98 @@ sudo chown root:admins /srv/nfs/admin_tools
 sudo chmod 770 /srv/nfs/dev_projects
 sudo chmod 770 /srv/nfs/admin_tools
 ```
+<img width="625" height="102" alt="image" src="https://github.com/user-attachments/assets/bf2eb8b3-a179-4c92-84cc-a131278fdbb3" />
+<img width="535" height="58" alt="image" src="https://github.com/user-attachments/assets/6e802ae1-1390-4c83-bf65-9881c41b6a80" />
+
+> 🔍 Com comprovar que està bé?
+```bash
+ls -l /srv/nfs/
+```
+> ✅ Sortida esperada:
+```bash
+drwxrwx--- 2 root admins ... admin_tools
+drwxrwx--- 2 root devs   ... dev_projects
+```
+<img width="549" height="83" alt="image" src="https://github.com/user-attachments/assets/2712a817-d92c-4487-89d1-119b0de38ffe" />
+
+> ⚠️ Si veus root root, el grup no existeix o el chown ha fallat.
+
 ### Instal·lació del servidor NFS
 > 📍 [Només al servidor]
 ```bash
 sudo apt install nfs-kernel-server -y
+```
+---
+> 📍 [Només al client] → Instal·lar el client NFS:
+```bash
+sudo apt update && sudo apt upgrade -y
+sudo apt install nfs-common -y
+```
+> ⚠️ Important: Sense nfs-common, el client no podrà muntar recursos NFS, i rebrà errors com:
+mount: /mnt/...: opción incorrecta o missing /sbin/mount.nfs.
+## Fase 3: Exportació d’administració – root_squash
+
+Prova 1: Comportament per defecte:
+> 📍 [Només al servidor] → Edita /etc/exports:
+```bash
+/srv/nfs/admin_tools 192.168.56.0/24(rw,sync,no_subtree_check)
+```
+> 💡 L’opció no_subtree_check evita advertències i és la més compatible.
+<img width="1092" height="222" alt="image" src="https://github.com/user-attachments/assets/76ae9c8a-0d15-4a85-9a7c-a9cd95e8ae98" />
+
+Recarrega:
+
+```bash
+sudo exportfs -ra
+```
+<img width="1100" height="95" alt="image" src="https://github.com/user-attachments/assets/f2079fdb-56c6-4c9f-b2a3-2a82d2d971b6" />
+
+> 📍 [Només al client]:
+```
+sudo mkdir -p /mnt/admin_tools
+sudo mount 192.168.56.105:/srv/nfs/admin_tools /mnt/admin_tools
+```
+> 🔍 Important:
+No intentis escriure com a root → serà convertit en nobody per root_squash.
+No intentis escriure com a dev01 → no pertany al grup admins.
+Has d’usar admin01, que pertany al grup admins.
+
+```
+# ✅ Correcte: admin01 pertany al grup admins
+sudo -u admin01 touch /mnt/admin_tools/test_squash.txt
+
+# ❌ Permís denegat: dev01 no pertany a admins
+sudo -u dev01 touch /mnt/admin_tools/test_dev.txt
+
+# ❌ Permís denegat: root → nobody
+sudo touch /mnt/admin_tools/test_root.txt
+```
+📍 [Només al servidor] → Verificar:
+```
+sudo ls -l /srv/nfs/admin_tools/test_squash.txt
+# Sortida esperada: -rw-r--r-- 1 admin01 admins ...
+```
+> ✅ Això demostra que funciona correctament.
+
+## Fase 4: Exportació de desenvolupament – Control per IP i permisos
+
+> 📍 [Només al servidor] → /etc/exports:
+```bash
+/srv/nfs/dev_projects 192.168.56.0/24(rw,sync,no_subtree_check) 192.168.56.100(ro,sync,no_subtree_check)
+```
+> ✅ No hi ha dues línies. És una sola línia amb dues regles.
+
+Recarregar:
+```bash
+sudo exportfs -ra
+sudo exportfs -v  # Verificar que apareixen les dues regles
+```
+> 📍 [Client] → Proves:
+Cas 1: IP dins de 192.168.56.0/24 (ex: 192.168.56.101)
+
+```bash
+sudo umount /mnt/dev_projects 2>/dev/null
+sudo mkdir -p /mnt/dev_projects
+sudo mount -t nfs 192.168.56.105:/srv/nfs/dev_projects /mnt/dev_projects
+sudo -u dev01 touch /mnt/dev_projects/test_rw.txt  # ✅ Funciona
 ```
