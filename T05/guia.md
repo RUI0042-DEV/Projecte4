@@ -62,6 +62,17 @@ sudo systemctl restart ssh
 
 - Desactiva l’accés al root (ja explicat amb PermitRootLogin no).
 - Crea un nou usuari usuari2:
+- posar contraseña l'usuari root
+
+```bash
+sudo passwd root
+```
+Comprova que pot fer login local:
+
+```bash
+su - root
+```
+Creació usuari:
 
 ```
 sudo useradd -m -s /bin/bash usuari2
@@ -77,6 +88,8 @@ Resultat esperat:
 ``
 Permission denied
 ``
+
+<img width="900" height="251" alt="image" src="https://github.com/user-attachments/assets/e0ad0185-2857-42cb-8b80-26e243b82078" />
 
 <img width="528" height="88" alt="image" src="https://github.com/user-attachments/assets/cf936215-044f-497d-a708-2d9a0f7858db" />
 
