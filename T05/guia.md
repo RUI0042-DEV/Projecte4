@@ -130,7 +130,7 @@ ssh-keygen -t rsa
 <img width="833" height="404" alt="image" src="https://github.com/user-attachments/assets/afe05439-1a85-49bb-a2ec-2ff4a04b2eb5" />
 
 ```bash
-ls -\.ssh\
+ls .\.ssh\
 ```
 <img width="774" height="265" alt="Captura de pantalla 2025-12-03 203907" src="https://github.com/user-attachments/assets/5f5aefe9-4f84-4c48-8b08-cc511a86fb6c" />
 
@@ -148,7 +148,7 @@ mkdir .ssh
 touch .ssh/authorized_keys
 ls
 cat id_rsa.pub
-cat id_rsa.pub >> .ssh/ .ssh/authorized_keys
+cat id_rsa.pub >> .ssh/authorized_keys
 ```
 
 <img width="1108" height="215" alt="Captura de pantalla 2025-12-03 204200" src="https://github.com/user-attachments/assets/61e7a386-da18-47e6-864f-5e59044176d1" />
