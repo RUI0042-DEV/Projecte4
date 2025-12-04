@@ -159,3 +159,61 @@ ssh usuari@192.168.56.109
 ```
 > Si has fet be tots els pasos no et demanara la contraseña
 > 
+
+### Servidor OpenSSH
+
+Obrim a la configuració i busquem "características opcionales".
+<img width="1000" height="859" alt="image" src="https://github.com/user-attachments/assets/de709631-e361-4b2d-bc85-8479364e7692" />
+
+- Ver características
+- ver las cacterísticas disponibles
+
+I busquem el "Servidor OpenSSH" i al agregem un cop acabat de agregar el servidor OpenSSH i obrirem el powershell com administrador.
+
+```bash
+Start-Service sshd
+```
+I indiquem que el servei arranqui automàticament
+
+```bash
+Set-Service -Name sshd -StartupType 'Automatic'
+```
+
+<img width="976" height="181" alt="image" src="https://github.com/user-attachments/assets/b1d18195-cbf0-4f60-b351-2435fc837f22" />
+
+Comprovació
+
+Utilitzem aquesta comanda para saber que si el servei actiu i tenim de obrir el powershell com administrador.
+
+```
+Get-Service sshd
+```
+
+Una vegada acabat afagirem un adaptador mes que sera el adaptador nome anfitrió 
+
+```
+New-NetFirewallRule -Name "OpenSSH-Server" -DisplayName "OpenSSH Server (sshd)" -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22
+```
+
+I reniciarem el servei
+
+```
+Restart-Service sshd
+```
+
+I fem un:
+```
+ipconfig | findstr "IPv4"
+```
+> para poder saber quin ip tenim para fer el ssh
+
+```
+ssh rui@192.168.56.111
+```
+<img width="867" height="129" alt="image" src="https://github.com/user-attachments/assets/ccae33b7-f232-4855-82e1-83ff038a4199" />
+
+Un cop conectat en el ssh ens tendria sorti aixi:
+
+<img width="688" height="168" alt="image" src="https://github.com/user-attachments/assets/e16902e0-fd1f-4949-8108-121f1112995f" />
+
+<img width="1116" height="626" alt="image" src="https://github.com/user-attachments/assets/42f78276-d0fe-4605-84c6-008a3e6391c2" />
