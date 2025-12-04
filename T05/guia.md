@@ -207,6 +207,9 @@ ipconfig | findstr "IPv4"
 ```
 > para poder saber quin ip tenim para fer el ssh
 
+<img width="560" height="93" alt="Captura de pantalla 2025-12-04 190058" src="https://github.com/user-attachments/assets/30b96e96-399d-4981-8717-655d63d4bbb6" />
+
+
 ```
 ssh rui@192.168.56.111
 ```
