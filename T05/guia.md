@@ -113,7 +113,7 @@ Una vegada acabat obrirem el terminal i farem un:
 ssh -D 9876 usuari@192.168.56.109
 ```
 
-Un cop fet el ssh anirem al navegador i anirem a descargar el "Wireshark", un cop acabat de descargar el wireshark al obrirem i selecionarem el ethernet.
+Un cop fet el ssh anirem al navegador i anirem a descarregar el "Wireshark", un cop acabat de descarregar el wireshark, obrirem i seleccionarem el ethernet.
 
 <img width="848" height="661" alt="image" src="https://github.com/user-attachments/assets/06a2d819-2ad8-4df9-a11b-c255cf194c7d" />
 
@@ -153,22 +153,21 @@ cat id_rsa.pub >> .ssh/authorized_keys
 
 <img width="1108" height="215" alt="Captura de pantalla 2025-12-03 204200" src="https://github.com/user-attachments/assets/61e7a386-da18-47e6-864f-5e59044176d1" />
 
-Un cop acabat de posar tots als comandas anirem al client i farem:
+Un cop acabat de posar tots als comandes anirem al client i farem:
 ```bash
 ssh usuari@192.168.56.109
 ```
 > Si has fet be tots els pasos no et demanara la contraseña
-> 
 
 ### Servidor OpenSSH
 
-Obrim a la configuració i busquem "características opcionales".
+Obra la configuració i busquem "características opcionales".
 <img width="1000" height="859" alt="image" src="https://github.com/user-attachments/assets/de709631-e361-4b2d-bc85-8479364e7692" />
 
 - Ver características
 - ver las cacterísticas disponibles
 
-I busquem el "Servidor OpenSSH" i al agregem un cop acabat de agregar el servidor OpenSSH i obrirem el powershell com administrador.
+I busquem el "Servidor OpenSSH" i al agregem un cop acabat d'agregar el servidor OpenSSH i obrirem el powershell com a administrador.
 
 ```bash
 Start-Service sshd
@@ -189,13 +188,13 @@ Utilitzem aquesta comanda para saber que si el servei actiu i tenim de obrir el 
 Get-Service sshd
 ```
 
-Una vegada acabat afagirem un adaptador mes que sera el adaptador nome anfitrió 
+Una vegada acabat afegirem un adaptador més que serà l'adaptador només amfitrió.
 
 ```
 New-NetFirewallRule -Name "OpenSSH-Server" -DisplayName "OpenSSH Server (sshd)" -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22
 ```
 
-I reniciarem el servei
+I reniciarem el servei.
 
 ```
 Restart-Service sshd
@@ -205,7 +204,7 @@ I fem un:
 ```
 ipconfig | findstr "IPv4"
 ```
-> para poder saber quin ip tenim para fer el ssh
+> Para poder saber quin ip tenim para fer el ssh.
 
 <img width="560" height="93" alt="Captura de pantalla 2025-12-04 190058" src="https://github.com/user-attachments/assets/30b96e96-399d-4981-8717-655d63d4bbb6" />
 
@@ -215,7 +214,7 @@ ssh rui@192.168.56.111
 ```
 <img width="867" height="129" alt="image" src="https://github.com/user-attachments/assets/ccae33b7-f232-4855-82e1-83ff038a4199" />
 
-Un cop conectat en el ssh ens tendria sorti aixi:
+Un cop connectat en el ssh ens tindria sortí així:
 
 <img width="688" height="168" alt="image" src="https://github.com/user-attachments/assets/e16902e0-fd1f-4949-8108-121f1112995f" />
 
