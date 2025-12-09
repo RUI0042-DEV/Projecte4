@@ -211,7 +211,7 @@ sudo ls -l /srv/nfs/admin_tools/test_squash.txt
 ```bash
 /srv/nfs/dev_projects 192.168.56.0/24(rw,sync,no_subtree_check) 192.168.56.100(ro,sync,no_subtree_check)
 ```
-> ✅ No hi ha dues línies. És una sola línia amb dues regles.
+> ⚠️ No afegir dues línies per al mateix directori. És una sola línia.
 
 Recarregar:
 ```bash
@@ -219,11 +219,94 @@ sudo exportfs -ra
 sudo exportfs -v  # Verificar que apareixen les dues regles
 ```
 > 📍 [Client] → Proves:
-Cas 1: IP dins de 192.168.56.0/24 (ex: 192.168.56.101)
+### Cas 1: IP dins de 192.168.56.0/24 (ex: 192.168.56.101)
 
 ```bash
-sudo umount /mnt/dev_projects 2>/dev/null
 sudo mkdir -p /mnt/dev_projects
 sudo mount -t nfs 192.168.56.105:/srv/nfs/dev_projects /mnt/dev_projects
 sudo -u dev01 touch /mnt/dev_projects/test_rw.txt  # ✅ Funciona
 ```
+<img width="756" height="91" alt="image" src="https://github.com/user-attachments/assets/0320e605-57ab-4b1b-9cb8-708d0648bcab" />
+
+Comprovació:
+```bash
+sudo -u dev01 ls -l /mnt/dev_projects/test_rw.txt
+```
+<img width="651" height="62" alt="image" src="https://github.com/user-attachments/assets/58267285-c49f-49aa-ad16-4eb5301ebceb" />
+
+
+### Cas 2: Simular IP de consultor (192.168.56.100)
+Desmuntar primer
+```bash
+sudo umount /mnt/dev_projects
+# Canvia temporalment la IP
+sudo ip addr del 192.168.56.101/24 dev enp0s8
+sudo ip addr add 192.168.56.100/24 dev enp0s8
+```
+<img width="588" height="103" alt="image" src="https://github.com/user-attachments/assets/73a2f90c-903f-488f-8175-bd745a9ea559" />
+
+
+Torna a muntar
+```bash
+sudo mount -t nfs 192.168.56.105:/srv/nfs/dev_projects /mnt/dev_projects
+sudo -u dev01 touch /mnt/dev_projects/test_ro.txt  # ❌ Només lectura → permís denegat
+```
+
+### 🔁 Tornar a l’IP original
+> ⚠️ Important: Després de la prova, restaura la IP per continuar.
+```bash
+# 1. Desmuntar
+sudo umount /mnt/dev_projects
+
+# 2. Restaurar IP original
+sudo ip addr del 192.168.56.100/24 dev enp0s8
+sudo ip addr add 192.168.56.101/24 dev enp0s8
+
+# 3. Verificar
+ip a show enp0s8  # Ha de mostrar 192.168.56.101
+```
+
+### Cas 3: Accés com a admin01
+
+```bash
+sudo mount -t nfs 192.168.56.105:/srv/nfs/dev_projects /mnt/dev_projects # Muntem si no esta muntat
+sudo -u admin01 touch /mnt/dev_projects/test_admin.txt  # ❌ No pertany al grup devs → permís denegat
+```
+<img width="775" height="67" alt="image" src="https://github.com/user-attachments/assets/c3e6b777-e094-40b3-ba92-980fdf4a4be9" />
+
+> 🔐 Això demostra que NFS aplica tant les regles d’IP com els permisos locals.
+
+### Fase 5: Muntatge automàtic amb /etc/fstab
+> 📍 [Client] → /etc/fstab:
+```bash
+192.168.56.105:/srv/nfs/admin_tools /mnt/admin_tools nfs defaults 0 0
+192.168.56.105:/srv/nfs/dev_projects /mnt/dev_projects nfs defaults 0 0
+```
+
+Provar:
+```bash
+sudo mount -a
+sudo reboot
+mount | grep nfs
+df -h
+```
+> ✅ Els recursos s’han de muntar automàticament.
+
+### Conclusió i recomanacions
+
+✅ Assoliments
+- Control d’accés per grup i IP.
+- Demostració de root_squash i permisos.
+- Muntatge automàtic.
+
+⚠️ Limitacions:
+- Gestió manual d’identitats.
+- Trànsit sense xifrar.
+- Seguretat basada en IP.
+
+🛠 Recomanacions:
+
+- LDAP/FreeIPA per autenticació centralitzada.
+- NFSv4 + Kerberos per xifratge.
+- Backups diaris de /srv/nfs.
+> 💬 Aquesta solució és un pas provisional cap a una infraestructura més robusta.
