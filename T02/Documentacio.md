@@ -145,6 +145,9 @@ A Duplicati, clica “Add backup” → “Configure a new backup”.
 - Google Drive → carpeta Duplicati_Backups conté còpies.
 - Simula una pèrdua: esborra tot el contingut de Documents.
 
+<img width="932" height="765" alt="image" src="https://github.com/user-attachments/assets/cff15682-bdb4-4142-aa50-5fb709fba9d5" />
+
+
 ## 7. Restauració de dades
 
 7.1. Des del disc local
@@ -153,9 +156,18 @@ A Duplicati, clica “Add backup” → “Configure a new backup”.
 - Destinació: C:\Users\director\copia
 - Clica “Restore” i comprova els arxius.
 
+<img width="921" height="563" alt="image" src="https://github.com/user-attachments/assets/adbdb339-63db-42cb-99f4-ffbfdb8e2423" />
+
+<img width="932" height="820" alt="image" src="https://github.com/user-attachments/assets/35ba6e9a-f46f-45fb-8383-de6e1ae4417f" />
+
+<img width="896" height="827" alt="image" src="https://github.com/user-attachments/assets/23db0adc-bfc8-47c6-ba31-a0520b20eccf" />
+
+
 7.2. Des de Google Drive
 
 - Selecciona Backup_Cloud_Documents_Director → “Restore”.
 - Pot demanar reautenticació a Google.
 - Destinació: C:\Users\director\Copia_nuvol
 - Verifica la integritat.
+
+<img width="938" height="834" alt="image" src="https://github.com/user-attachments/assets/6c2fccc4-27f9-4373-9109-2ad2db43f8bb" />
