@@ -172,3 +172,6 @@ A Duplicati, clica “Add backup” → “Configure a new backup”.
 - Verifica la integritat.
 
 <img width="938" height="834" alt="image" src="https://github.com/user-attachments/assets/6c2fccc4-27f9-4373-9109-2ad2db43f8bb" />
+
+## 8. Conclusió
+Amb aquesta guia, el personal tècnic pot implementar una solució de còpies de seguretat eficaç, compliant amb l’esquema 3-2-1, i assegurar la continuïtat del negoci en cas d’incidents. La separació entre còpia local (ràpida) i còpia al núvol (segura i fora del lloc) garanteix màxima resiliència.
