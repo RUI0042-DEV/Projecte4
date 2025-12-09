@@ -177,3 +177,12 @@ A Duplicati, clica “Add backup” → “Configure a new backup”.
 Amb aquesta guia, el personal tècnic pot implementar una solució de còpies de seguretat eficaç, compliant amb l’esquema 3-2-1, i assegurar la continuïtat del negoci en cas d’incidents. La separació entre còpia local (ràpida) i còpia al núvol (segura i fora del lloc) garanteix màxima resiliència.
 
 # Guia Tècnica: Còpia de Seguretat amb Duplicity i Cron en Ubuntu Server (FASE 2)
+
+## 1. Introducció
+
+Aquesta guia detalla com implementar una política de còpies de seguretat en un servidor Linux mitjançant Duplicity, una eina de línia d’ordres que permet fer còpies complertes i incrementals, amb suport per a xifratge i múltiples destinacions.
+
+S’utilitzarà un disc secundari local (/dev/sdb) com a emmagatzematge de còpies, que es muntarà/desmuntarà automàticament en cada execució per raons de seguretat. La programació es farà amb cron, seguint una política de còpies setmanals:
+
+- Diumenge: còpia completa.
+- Dilluns a dissabte: còpies incrementals.
