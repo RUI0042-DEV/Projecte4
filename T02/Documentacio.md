@@ -64,6 +64,7 @@ http://localhost:8200
 <img width="1182" height="698" alt="image" src="https://github.com/user-attachments/assets/5124f25e-6629-473d-822c-d11f4d90cf89" />
 
 ## 4. Configuració del backup local (disc secundari)
+> Abans de fer les còpies anirem a configuració en opcions avançades activen el "snapshot policy"
 
 4.1. Creació del backup
 
