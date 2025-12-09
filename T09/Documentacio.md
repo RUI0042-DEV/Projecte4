@@ -122,6 +122,9 @@ ls -l /srv/nfs/
 drwxr-xr-x 2 root root ... admin_tools
 drwxr-xr-x 2 root root ... dev_projects
 ```
+<img width="575" height="104" alt="image" src="https://github.com/user-attachments/assets/2bd31db0-5d3d-4ab5-8c37-ba29dd01c233" />
+
+
 ### Aplicar propietari i permisos
 ```bash
 # Propietari: root | Grup: corresponent
@@ -210,14 +213,19 @@ sudo ls -l /srv/nfs/admin_tools/test_squash.txt
 > 📍 [Només al servidor] → /etc/exports:
 ```bash
 /srv/nfs/dev_projects 192.168.56.0/24(rw,sync,no_subtree_check) 192.168.56.100(ro,sync,no_subtree_check)
+/srv/nfs/admin_tools 192.168.56.0/24(rw,sync,no_subtree_check) 192.168.56.100(ro,sync,no_subtree_check)
 ```
-> ⚠️ No afegir dues línies per al mateix directori. És una sola línia.
+<img width="1087" height="267" alt="image" src="https://github.com/user-attachments/assets/5b703820-4075-46eb-b0b9-bc48194ef42c" />
+
 
 Recarregar:
 ```bash
 sudo exportfs -ra
 sudo exportfs -v  # Verificar que apareixen les dues regles
 ```
+
+<img width="1023" height="218" alt="image" src="https://github.com/user-attachments/assets/2a68413c-9eae-4c45-9862-95d8b325589a" />
+
 > 📍 [Client] → Proves:
 ### Cas 1: IP dins de 192.168.56.0/24 (ex: 192.168.56.101)
 
@@ -282,6 +290,8 @@ sudo -u admin01 touch /mnt/dev_projects/test_admin.txt  # ❌ No pertany al grup
 192.168.56.105:/srv/nfs/admin_tools /mnt/admin_tools nfs defaults 0 0
 192.168.56.105:/srv/nfs/dev_projects /mnt/dev_projects nfs defaults 0 0
 ```
+<img width="917" height="479" alt="image" src="https://github.com/user-attachments/assets/5b18081b-454f-4cae-bf5a-9b21a0848b52" />
+
 
 Provar:
 ```bash
@@ -290,6 +300,9 @@ sudo reboot
 mount | grep nfs
 df -h
 ```
+<img width="655" height="333" alt="image" src="https://github.com/user-attachments/assets/ec263777-399a-4bd7-9c45-df9bd47e5947" />
+
+
 > ✅ Els recursos s’han de muntar automàticament.
 
 ### Conclusió i recomanacions
