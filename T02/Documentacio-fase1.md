@@ -186,3 +186,11 @@ S’utilitzarà un disc secundari local (/dev/sdb) com a emmagatzematge de còpi
 
 - Diumenge: còpia completa.
 - Dilluns a dissabte: còpies incrementals.
+
+## 2. Requisits previs
+Màquina virtual amb Ubuntu Server (22.04 LTS o superior).
+Dos discs durs:
+Disc primari (/dev/sda): sistema operatiu.
+Disc secundari (/dev/sdb): 10 GB, no particionat.
+Accés com a usuari amb permisos sudo.
+Connexió a Internet per instal·lar paquets.
