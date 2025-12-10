@@ -197,3 +197,57 @@ sudo chmod +x /usr/local/bin/incrementalbackup.sh
 > Els dos scripts són iguals, però cron els executa en dies diferents. Duplicity decideix automàticament el tipus de còpia segons l’estat del destí.
 
 ## 8. Programació amb cron
+
+Segons GeekyTheory – Programar tareas en Linux usando crontab:
+  - Els 5 asteriscos representen: minut, hora, dia del mes, mes, dia de la setmana.
+  - El dia de la setmana va de 0 (diumenge) a 6 (dissabte).
+
+```bash
+sudo crontab -e
+```
+> Si és la primera vegada, et demanarà que triïs un editor (tria nano si no n’has usat cap).
+
+```bash
+# Còpia completa: diumenge a les 23:00 (0 = diumenge)
+0 23 * * 0 /usr/local/bin/fullbackup.sh
+
+# Còpies incrementals: dilluns (1) a dissabte (6) a les 23:00
+0 23 * * 1-6 /usr/local/bin/incrementalbackup.sh
+```
+
+<img width="1097" height="587" alt="image" src="https://github.com/user-attachments/assets/bd79f914-eb46-411c-903e-c6d8a9fd850f" />
+
+> Això coincideix exactament amb la sintaxi explicada al recurs de suport.
+
+## 9. Comprovació i bones pràctiques
+
+### 9.1. Veure l’estat de les còpies
+
+```bash
+sudo mount /dev/sdb1 /media/backup
+export PASSPHRASE="micontrasenyasegura"
+sudo duplicity collection-status file:///media/backup
+sudo umount /media/backup
+```
+
+<img width="915" height="441" alt="image" src="https://github.com/user-attachments/assets/17d16166-6dbb-41c8-b952-34681d864405" />
+
+
+### 9.2. Recomanacions
+
+- Canvia "micontrasenyasegura" per una contrasenya real i segura.
+- Prova restauracions un cop al mes.
+- Si vols veure si cron s’executa:
+
+```bash
+sudo grep CRON /var/log/syslog
+```
+
+<img width="1095" height="470" alt="image" src="https://github.com/user-attachments/assets/6dfd1f7f-66f0-4ee2-8b81-f82863eebed6" />
+
+## 10. Conclusió
+
+Aquesta configuració és robusta, segura i totalment automàtica. El disc de backup només és accessible durant l’execució, i Duplicity gestiona de forma intel·ligent el tipus de còpia. La programació amb ``cron`` segueix les bones pràctiques documentades i assegura la continuïtat del pla de còpies.
+
+---
+[Tornar enrere](README.md)
