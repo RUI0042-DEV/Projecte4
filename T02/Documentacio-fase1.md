@@ -175,3 +175,6 @@ A Duplicati, clica “Add backup” → “Configure a new backup”.
 
 ## 8. Conclusió
 Amb aquesta guia, el personal tècnic pot implementar una solució de còpies de seguretat eficaç, compliant amb l’esquema 3-2-1, i assegurar la continuïtat del negoci en cas d’incidents. La separació entre còpia local (ràpida) i còpia al núvol (segura i fora del lloc) garanteix màxima resiliència.
+
+---
+[Tornar enrere](README.md)
