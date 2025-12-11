@@ -55,3 +55,5 @@ Configuración i buscar firewall seleccionar la primera opció i clicar ``cambia
 <img width="1179" height="651" alt="image" src="https://github.com/user-attachments/assets/39a02c32-71d4-4b55-987c-ed58e253279e" />
 
 ## 4. Conexio de zorin a windows
+
+Obrirem la nostra màquina zorin i buscarem "Remmina", ja que és l'eina que nostres utilitzarem per connectar-nos.
