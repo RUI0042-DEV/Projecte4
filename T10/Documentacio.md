@@ -8,9 +8,7 @@ Escenari de Treball:
 
 Servidor: Ubuntu Server (Interfícies: NAT + Host-Only).
 
-Client: Zorin OS Desktop (Interfícies: NAT + Host-Only).
-
-Xarxa: Ambdues màquines han de tenir connectivitat entre elles (Xarxa NAT/Host-Only).
+Client: Zorin OS Desktop (Interfícies: Xarxa NAT + Host-Only).
 
 ## 2. Instal·lació de Paquets (Servidor)
 
@@ -112,11 +110,18 @@ sudo systemctl status cups
 
 - Obre el navegador i vés a: https://IP_DEL_SERVIDOR:631 (Accepta l'avís de seguretat SSL).
 
+<img width="972" height="698" alt="image" src="https://github.com/user-attachments/assets/025cd06c-61f6-4476-816f-c0a99339ded3" />
+
 - Navega a la pestanya Administration (Administració).
+
+<img width="981" height="709" alt="image" src="https://github.com/user-attachments/assets/b247dc2e-a6ad-43c5-97ad-c60d817fad67" />
+> Aquí hauràs de posar l'usuari del server.
 
 - Fes clic a Add Printer (Afegir Impressora). Et demanarà usuari i contrasenya (usa l'usuari que has posat al grup lpadmin al pas 4.1).
 
 - Selecció: Tria CUPS-PDF (Virtual PDF Printer) a "Local Printers".
+
+<img width="969" height="671" alt="image" src="https://github.com/user-attachments/assets/223d1ee9-1541-4761-993c-ecefe1ced07e" />
 
 - Detalls:
   - Name: Virtual_PDF_Printer
@@ -124,6 +129,48 @@ sudo systemctl status cups
   - Location: Server
   - Sharing: Marca la casella Share this printer (Compartir aquesta impressora).
 
+<img width="977" height="677" alt="image" src="https://github.com/user-attachments/assets/31861948-caef-4e1a-98fc-c98e8b9b7a04" />
+
 - Marca/Model: Selecciona Generic -> Generic CUPS-PDF Printer (no options) i finalitza.
 
+<img width="978" height="705" alt="image" src="https://github.com/user-attachments/assets/df86b4d7-eeb6-4664-a13e-1d55614efedc" />
+
 ## 6. Configuració del Client (Zorin OS)
+
+Al client (Zorin OS / Ubuntu Desktop):
+
+- Vés a Configuració -> Impressores.
+- Si estan a la mateixa xarxa, la impressora Virtual_PDF_Printer_server hauria d'aparèixer automàticament.
+- Si no apareix, fes clic a "Afegir Impressora" i busca-la per la IP del servidor.
+
+<img width="978" height="678" alt="image" src="https://github.com/user-attachments/assets/d985c683-7f7b-475c-988b-2303cebbc1ba" />
+
+## 7. Prova de Funcionament i Verificació
+
+### 7.1 Enviar una feina
+
+Des del client Zorin, obre un document o navegador i imprimeix utilitzant la ``Virtual_PDF_Printer_server``.
+
+<img width="976" height="644" alt="image" src="https://github.com/user-attachments/assets/dadd57f2-c966-4e7d-9094-755032aae4f9" />
+
+<img width="976" height="642" alt="image" src="https://github.com/user-attachments/assets/66092c50-bc41-4977-8ada-1aab846337e6" />
+
+## 7.2 Verificar al panell web
+
+A la web de CUPS (``https://IP:631``), a la pestanya Jobs (Treballs), hauries de veure l'estat del treball com a "completed".
+
+<img width="970" height="679" alt="image" src="https://github.com/user-attachments/assets/70862355-0ddd-43c9-86a2-7f081702075c" />
+
+## 7.3 Verificar el fitxer PDF (Evidència Final)
+
+Al servidor Ubuntu, els documents impresos es guarden automàticament com a arxius PDF. Per defecte, solen anar a una carpeta PDF dins del home de l'usuari o a /var/spool/cups-pdf/ANONYMOUS/ depenent de la configuració. Segons la teva captura, apareixen a /home/usuari/PDF.
+
+Comprova-ho amb:
+
+```bash
+ls -l ~/PDF
+# o si tens 'tree' instal·lat
+tree ~/PDF
+```
+
+Hauries de veure els fitxers ``.pdf`` generats.
