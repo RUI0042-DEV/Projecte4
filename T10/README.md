@@ -61,4 +61,5 @@ El lliurament ha de ser una guia tècnica que documenti tot el procés.
 * J.B. Alex Mantich. (2024). [Instalación de servidor de impresión en cups para linux (Vídeo).](https://www.youtube.com/watch?v=FNwSTrOSgZQ)
 * Idroot. (2025). [How To Install CUPS Print Server on Ubuntu 24.04 LTS.](https://idroot.us/install-cups-print-server-ubuntu-24-04/)
 ---
+[Documentacio](Documentacio.md)
 [Tornar a la pagina principal](../README.md)
