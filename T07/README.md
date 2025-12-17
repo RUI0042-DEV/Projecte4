@@ -74,4 +74,5 @@ Aquesta guia és la que s'envia per correu electrònic a un client amb una incid
 * Genbeta: RustDesk (alternativa a TeamViewer).
 ---
 - [Documentacio](Documentacio.md)
+- [Guia client](Guia2.md)
 - [Tornar a la pagina principal](../README.md)
