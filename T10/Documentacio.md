@@ -135,6 +135,13 @@ sudo systemctl status cups
 
 <img width="978" height="705" alt="image" src="https://github.com/user-attachments/assets/df86b4d7-eeb6-4664-a13e-1d55614efedc" />
 
+- Adminitración > Impresora (Seleccionés la teva impressora) > Imprimir pagina de auto prueba.
+
+<img width="990" height="708" alt="image" src="https://github.com/user-attachments/assets/688b0a51-2c0b-48c2-95c4-e003d74a14fe" />
+
+<img width="1000" height="717" alt="image" src="https://github.com/user-attachments/assets/dc9ffa8e-0286-4979-b80a-c2124fa8c7ce" />
+
+
 ## 6. Configuració del Client (Zorin OS)
 
 Al client (Zorin OS / Ubuntu Desktop):
@@ -173,4 +180,7 @@ ls -l ~/PDF
 tree ~/PDF
 ```
 
+<img width="750" height="330" alt="image" src="https://github.com/user-attachments/assets/916ecd19-7441-4767-90f5-504d5dd4453d" />
+
 Hauries de veure els fitxers ``.pdf`` generats.
+
