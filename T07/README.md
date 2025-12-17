@@ -73,5 +73,5 @@ Aquesta guia és la que s'envia per correu electrònic a un client amb una incid
 * Genbeta: Chrome Remote Desktop.
 * Genbeta: RustDesk (alternativa a TeamViewer).
 ---
-[Documentacio](Documentacio.md)
-[Tornar a la pagina principal](../README.md)
+- [Documentacio](Documentacio.md)
+- [Tornar a la pagina principal](../README.md)
