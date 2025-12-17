@@ -1,4 +1,4 @@
-### Guia 2: Manual per al Client (Usuari Final)
+# Guia 2: Manual per al Client (Usuari Final)
 
 *Si tens un problema, el nostre equip es connectarà al teu equip seguint aquests passos:*
 
