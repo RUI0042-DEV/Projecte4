@@ -19,6 +19,9 @@ Quan el tècnic intenti entrar, apareixerà una finestra. Simplement fes clic a 
 
 <img width="909" height="670" alt="Captura de pantalla 2025-12-17 202705" src="https://github.com/user-attachments/assets/6f493212-8a49-4350-8f6e-7a5a594d9498" />
 
+Un cop ja connectat pots donar permisos perquè el tècnic pugui fer les coses.
+
+<img width="1204" height="651" alt="image" src="https://github.com/user-attachments/assets/f80514d8-2bcc-458e-90fd-cc02e3c063a6" />
 
 **4. Com tancar**
 En qualsevol moment pots tancar el programa prement la "X" i la connexió es tallarà immediatament.
