@@ -85,3 +85,5 @@ Quan el tècnic intenti entrar, apareixerà una finestra. Simplement fes clic a 
 En qualsevol moment pots tancar el programa prement la "X" i la connexió es tallarà immediatament.
 
 ---
+
+[Tornar enrere](README.md)
